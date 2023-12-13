@@ -1,9 +1,10 @@
 #include "monty.h"
+
 void add_handler(stack1_t **head, unsigned int line_number);
 /**
- * add_handler - =========
- * @head: ==========
- * @line_number: ========
+ * add_handler - ======
+ * @head: ========
+ * @line_number: =====
  */
 void add_handler(stack1_t **head, unsigned int line_number)
 {
@@ -24,7 +25,7 @@ void add_handler(stack1_t **head, unsigned int line_number)
 	second = (*head)->next;
 	sum = first->n + second->n;
 
-	/*Remove the top two nodes */
+	/*Remove the two nodes  at the top*/
 	*head = second->next;
 	if (*head != NULL)
 	{
@@ -33,8 +34,7 @@ void add_handler(stack1_t **head, unsigned int line_number)
 	free(first);
 	free(second);
 
-	/* Create a new node with the sum */
-	/*newNode = createNode(sum);*/
+	/* Create a new node with the sum of the two top nodes */
 	newNode = (stack1_t *)malloc(sizeof(stack1_t));
 
 	if (newNode == NULL)
@@ -45,12 +45,10 @@ void add_handler(stack1_t **head, unsigned int line_number)
 	newNode->n = sum;
 	newNode->next = NULL;
 	newNode->prev = NULL;
-
 	if (*head != NULL)
 	{
 		newNode->next = *head;
 		(*head)->prev = newNode;
 	}
-	/**head = newNode;*/
 	info.head2 = newNode;
 }
