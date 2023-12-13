@@ -20,7 +20,7 @@ char **load_linked_list(int line_number, char *_FILE)
 	/*stack1_t *head = NULL;*/
 
 	/*    fileDescriptor = open(ALIAS_FILE, O_RDONLY);*/
-
+	(void)null;
 	fileDescriptor = open(_FILE, O_RDONLY);
 	if (fileDescriptor == -1)
 	{
@@ -45,6 +45,7 @@ char **load_linked_list(int line_number, char *_FILE)
 					if (line_number == j)
 					{
 						close(fileDescriptor);
+						strcpy(info.mensah, token[1]);
 						return (token);
 					}
 					else
@@ -63,5 +64,5 @@ char **load_linked_list(int line_number, char *_FILE)
 		}
 	}
 	close(fileDescriptor);
-	return (null);
+	return (NULL);
 }

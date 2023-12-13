@@ -68,6 +68,7 @@ typedef struct instruction_s
  * @mode:=====
  * @fileDescriptor: ===
  * @var: =====
+ * @mensah: ====
  * @head2: ====
  */
 typedef struct info_t
@@ -77,6 +78,7 @@ typedef struct info_t
 	char *mode;
 	int fileDescriptor;
 	token_t var;
+	char mensah[10];
 	stack1_t *head2;
 
 } info_t;

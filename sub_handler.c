@@ -1,9 +1,10 @@
 #include "monty.h"
+
 void sub_handler(stack1_t **head, unsigned int line_number);
 /**
- * sub_handler - =========
- * @head: ==========
- * @line_number: ========
+ * sub_handler - ====
+ * @head: ====
+ * @line_number: =
  */
 void sub_handler(stack1_t **head, unsigned int line_number)
 {
@@ -23,8 +24,7 @@ void sub_handler(stack1_t **head, unsigned int line_number)
 	first = *head;
 	second = (*head)->next;
 	sub = second->n - first->n;
-
-	/*Remove the top two nodes */
+	/*Remove the nodes at the irst two slots */
 	*head = second->next;
 	if (*head != NULL)
 	{
@@ -32,7 +32,6 @@ void sub_handler(stack1_t **head, unsigned int line_number)
 	}
 	free(first);
 	free(second);
-
 	/* Create a new node with the sum */
 	/*newNode = createNode(sum);*/
 	newNode = (stack1_t *)malloc(sizeof(stack1_t));
@@ -51,6 +50,5 @@ void sub_handler(stack1_t **head, unsigned int line_number)
 		newNode->next = *head;
 		(*head)->prev = newNode;
 	}
-	/**head = newNode;*/
 	info.head2 = newNode;
 }
