@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+OUTPUT_FILE="003.m"
+
+# Create or overwrite the output file with "push" followed by numbers from 1 to 3500
+echo "Generating $OUTPUT_FILE..."
+for ((i = 1; i <= 3500; i++))
+do
+    echo "push $i" >> "$OUTPUT_FILE"
+done
+
+echo "Done! $OUTPUT_FILE has been generated."
+
