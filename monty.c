@@ -17,14 +17,22 @@ void exitHandler(void)
  */
 void signal_handler(int signum)
 {
-	if (signum == SIGINT || signum == SIGTSTP)
+	(void)signum;
+	if (info.head2 != NULL)
 	{
-		if (info.head2 != NULL)
-			free_list(info.head2);
-		if (close(info.fileDescriptor) == -1)
-			return;
-		exit(EXIT_SUCCESS);
+		stack1_t *curr = info.head2;
+		stack1_t *temp = NULL;
+
+		while (curr)
+		{
+			temp = curr;
+			curr = curr->next;
+			free(temp);
+		}
+		info.head2 = NULL;
 	}
+	exit(EXIT_SUCCESS);
+
 }
 
 /**
@@ -41,7 +49,7 @@ int main(int argc, char **argv)
 	info.head2 = NULL;
 	info.err_no = 0;
 	signal(SIGINT, signal_handler);
-	signal(SIGTSTP, signal_handler);
+	/*signal(SIGTSTP, signal_handler);*/
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");

@@ -21,8 +21,8 @@
 
 
 /**
- * struct token_t - =====
- * @_token:=====
+ * struct token_t - ===
+ * @_token:====
  */
 typedef struct token_t
 {
@@ -62,10 +62,10 @@ typedef struct instruction_s
 
 
 /**
- * struct info_t -  All member data
+ * struct info_t -  All member variables
  * @err_no: =====
  * @filename: ======
- * @mode:=====
+ * @mode:===
  * @fileDescriptor: ===
  * @var: =====
  * @mensah: ====
