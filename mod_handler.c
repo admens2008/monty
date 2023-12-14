@@ -14,7 +14,7 @@ void mod_handler(stack1_t **head, unsigned int line_number)
 	stack1_t *newNode;
 
 	*head = info.head2;
-	if (*head == NULL || (*head)->next == NULL)
+	if (!(*head) || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
@@ -38,7 +38,7 @@ void mod_handler(stack1_t **head, unsigned int line_number)
 	free(second);
 	/* Create a new node where the mod will be stored */
 	newNode = (stack1_t *)malloc(sizeof(stack1_t));
-	if (newNode == NULL)
+	if (!newNode)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
@@ -46,7 +46,7 @@ void mod_handler(stack1_t **head, unsigned int line_number)
 	newNode->n = mod;
 	newNode->next = NULL;
 	newNode->prev = NULL;
-	if (*head != NULL)
+	if (*head)
 	{
 		newNode->next = *head;
 		(*head)->prev = newNode;
