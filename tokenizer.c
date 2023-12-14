@@ -17,12 +17,6 @@ char **tokenizer(char *line)
 		return (NULL);
 	while (token != NULL)
 	{
-		/*tokens[numTokens] = token;*/
-		if (token[0] == '#')
-		{
-			info.var._token[numTokens]  = NULL;
-			break;
-		}
 		info.var._token[numTokens] = token;
 		numTokens++;
 		token = strtok(NULL, delimiters);
