@@ -1,8 +1,9 @@
 #include "monty.h"
+
 /**
- * rotl_handler - ======
- * @head: ========
- * @ln: ========
+ * rotl_handler - ===
+ * @head: ====
+ * @ln: ==
  */
 void rotl_handler(stack1_t **head, unsigned int ln)
 {
@@ -11,7 +12,7 @@ void rotl_handler(stack1_t **head, unsigned int ln)
 
 	(void)ln;
 	*head = info.head2;
-	if (*head == NULL || (*head)->next == NULL)
+	if ((!*head) || (*head)->next == NULL)
 	{
 		;
 	}
