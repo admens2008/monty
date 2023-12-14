@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * pop_handler - =======
- * @stack: ==========
- * @line_number: =========
+ * pop_handler - ====
+ * @stack: =======
+ * @line_number: ======
  */
 void pop_handler(stack1_t **stack, unsigned int line_number)
 {
@@ -16,9 +16,8 @@ void pop_handler(stack1_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 		return;
 	}
-
 	head = head->next;
-	if (head != NULL)
+	if (head)
 	{
 		head->prev = NULL;
 	}
