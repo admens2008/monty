@@ -1,8 +1,9 @@
 #include "monty.h"
+
 /**
- * pchar_handler - =========
- * @head: ========
- * @line_number: =========
+ * pchar_handler - =====
+ * @head: =====
+ * @line_number: =======
  */
 void pchar_handler(stack1_t **head, unsigned int line_number)
 {
@@ -10,7 +11,7 @@ void pchar_handler(stack1_t **head, unsigned int line_number)
 
 	(void)head;
 	(void)line_number;
-	if (curr == NULL || !curr || head == NULL || (*head) == NULL)
+	if (curr == NULL || !curr || !head || (*head) == NULL)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
@@ -23,7 +24,4 @@ void pchar_handler(stack1_t **head, unsigned int line_number)
 		}
 		printf("%c\n", (char)curr->n);
 
-		/*curr = curr->next;*/
-		/*i++;*/
-	/*free_stack(h);*/
 }
