@@ -1,9 +1,10 @@
 #include "monty.h"
 void mod_handler(stack1_t **head, unsigned int line_number);
+
 /**
- * mod_handler - =========
- * @head: ==========
- * @line_number: ========
+ * mod_handler - =======
+ * @head: ======
+ * @line_number: =====
  */
 void mod_handler(stack1_t **head, unsigned int line_number)
 {
@@ -19,7 +20,6 @@ void mod_handler(stack1_t **head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 		return;
 	}
-
 	first = *head;
 	second = (*head)->next;
 	if (first->n == 0)
@@ -28,8 +28,7 @@ void mod_handler(stack1_t **head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	mod = second->n % first->n;
-
-	/*Remove the top two nodes */
+	/*Remove te nodes at the top to give room for the MOD result */
 	*head = second->next;
 	if (*head != NULL)
 	{
@@ -37,11 +36,8 @@ void mod_handler(stack1_t **head, unsigned int line_number)
 	}
 	free(first);
 	free(second);
-
-	/* Create a new node with the sum */
-	/*newNode = createNode(sum);*/
+	/* Create a new node where the mod will be stored */
 	newNode = (stack1_t *)malloc(sizeof(stack1_t));
-
 	if (newNode == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -50,12 +46,10 @@ void mod_handler(stack1_t **head, unsigned int line_number)
 	newNode->n = mod;
 	newNode->next = NULL;
 	newNode->prev = NULL;
-
 	if (*head != NULL)
 	{
 		newNode->next = *head;
 		(*head)->prev = newNode;
 	}
-	/**head = newNode;*/
 	info.head2 = newNode;
 }
