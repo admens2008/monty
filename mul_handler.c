@@ -31,9 +31,8 @@ void mul_handler(stack1_t **head, unsigned int line_number)
 	}
 	free(first);
 	free(second);
-	/* Create a new node with the sub */
+	/* Create a new node with the MULTIPLICATION result */
 	newNode = (stack1_t *)malloc(sizeof(stack1_t));
-
 	if (newNode == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
